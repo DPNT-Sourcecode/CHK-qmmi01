@@ -8,5 +8,3 @@ public class A extends Product {
         super('A', 50);
     }
 }
-
-

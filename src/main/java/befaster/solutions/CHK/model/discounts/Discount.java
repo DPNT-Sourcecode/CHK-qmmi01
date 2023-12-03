@@ -39,5 +39,3 @@ public class Discount {
         return 0;
     }
 }
-
-
