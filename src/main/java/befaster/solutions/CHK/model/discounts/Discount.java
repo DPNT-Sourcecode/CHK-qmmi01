@@ -49,10 +49,6 @@ public class Discount {
                 .filter(p -> Objects.equals(p.getCode(), product.getCode()))
                 .count();
 
-        if (freeProduct.equals(product)) {
-            numberOfProductsForDiscount++;
-        }
-
         if (numberOfProducts < numberOfProductsForDiscount) {
             return 0;
         }
@@ -62,18 +58,24 @@ public class Discount {
             for (int i = 0; i < numberOfProductsForDiscount; i++) {
                 productList.remove(product);
             }
-            productList.remove(freeProduct);
-            numberOfProducts = productList
-                    .stream()
-                    .filter(p -> Objects.equals(p.getCode(), product.getCode()))
-                    .count();
-            discount += freeProduct.getPrice();
+            boolean remove = productList.remove(freeProduct);
+            if (remove) {
+                numberOfProducts = productList
+                        .stream()
+                        .filter(p -> Objects.equals(p.getCode(), product.getCode()))
+                        .count();
+                discount += freeProduct.getPrice();
+            } else {
+                return discount;
+            }
+
         }
 
         return discount;
     }
 
 }
+
 
 
 
