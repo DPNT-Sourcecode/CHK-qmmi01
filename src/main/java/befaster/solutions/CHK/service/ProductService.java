@@ -23,6 +23,7 @@ import befaster.solutions.CHK.model.products.S;
 import befaster.solutions.CHK.model.products.T;
 import befaster.solutions.CHK.model.products.U;
 import befaster.solutions.CHK.model.products.V;
+import befaster.solutions.CHK.model.products.W;
 import befaster.solutions.CHK.model.products.X;
 import befaster.solutions.CHK.model.products.Y;
 import befaster.solutions.CHK.model.products.Z;
@@ -60,6 +61,7 @@ public class ProductService {
         products.put('T', new T());
         products.put('U', new U());
         products.put('V', new V());
+        products.put('W', new W());
         products.put('X', new X());
         products.put('Y', new Y());
         products.put('Z', new Z());
@@ -69,3 +71,4 @@ public class ProductService {
         return products.get(code);
     }
 }
+
