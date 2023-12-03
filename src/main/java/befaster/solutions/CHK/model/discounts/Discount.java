@@ -78,7 +78,7 @@ public class Discount {
         return discount;
     }
 
-    public int buyAnyOfXForY(List<Product> acceptedProducts, List<Product> productList, int numberOfProductsForDiscount, int discount) {
+    public int buyAnyOfXForY(List<Product> acceptedProducts, List<Product> productList, int numberOfProductsForDiscount, int priceToPay) {
         productList.sort(Comparator.comparingInt(Product::getPrice));
         productList.sort(Collections.reverseOrder());
 
@@ -87,8 +87,8 @@ public class Discount {
         for (Product product : productList) {
             if (matched.size() == numberOfProductsForDiscount) {
                 productList.removeAll(matched);
+                result += matched.stream().mapToInt(Product::getPrice).sum() - priceToPay;
                 matched.clear();
-                result += discount;
             }
             if (acceptedProducts.contains(product)) {
                 matched.add(product);
@@ -99,6 +99,7 @@ public class Discount {
     }
 
 }
+
 
 
 

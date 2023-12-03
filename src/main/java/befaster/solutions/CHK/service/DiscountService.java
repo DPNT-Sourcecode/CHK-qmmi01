@@ -44,7 +44,7 @@ public class DiscountService {
     public int applyDiscount(List<Product> products) {
         int discount = 0;
 
-        discount += this.discount.buyAnyOfXForY(bundleProducts,products,3, )
+        discount += this.discount.buyAnyOfXForY(bundleProducts, products, 3, 45);
 
         discount += this.discount.getXAndGetYForFree(new E(), products, 2, new B());
         discount += this.discount.getXAndGetYForFree(new F(), products, 2, new F());
@@ -65,5 +65,6 @@ public class DiscountService {
     }
 
 }
+
 
 
