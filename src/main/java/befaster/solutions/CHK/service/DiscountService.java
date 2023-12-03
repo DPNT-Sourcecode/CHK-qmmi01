@@ -96,9 +96,11 @@ public class DiscountService {
         }
 
         int discount = 0;
-        while (numberOfFs >= 2 && products.contains(new F())) {
+        while (numberOfFs >= 3 && products.contains(new F())) {
             products.remove(new F());
-            numberOfFs -= 2;
+            products.remove(new F());
+            products.remove(new F());
+            numberOfFs -= 3;
             discount += 10;
         }
 
@@ -106,5 +108,6 @@ public class DiscountService {
     }
 
 }
+
 
 
