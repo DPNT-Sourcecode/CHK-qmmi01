@@ -1,13 +1,14 @@
 package befaster.solutions.CHK;
 
 import befaster.runner.SolutionNotImplementedException;
+import befaster.solutions.CHK.products.Product;
 
 import java.util.HashMap;
 
 public class CheckoutSolution {
 
     // Map of String (SKU) -> Value (Pound)
-    private HashMap<Character, Integer> products = new HashMap<>();
+    private HashMap<Product, Integer> products = new HashMap<>();
     private HashMap<Character, String> specialOffers = new HashMap<>();
 
     public CheckoutSolution() {
@@ -72,9 +73,3 @@ public class CheckoutSolution {
 
     }
 }
-
-
-
-
-
-

@@ -1,2 +1,8 @@
-package befaster.solutions.CHK.model;public class A {
+package befaster.solutions.CHK.products;
+
+public class A extends Product{
+
+    public A(){
+        super(50);
+    }
 }
