@@ -56,9 +56,13 @@ public class Discount {
         int discount = 0;
         while (numberOfProducts >= numberOfProductsForDiscount && productList.contains(freeProduct)) {
             for (int i = 0; i < numberOfProductsForDiscount; i++) {
-                productList.remove(freeProduct);
+                productList.remove(product);
             }
-            numberOfProducts -= numberOfProductsForDiscount;
+            productList.remove(freeProduct);
+            numberOfProducts = productList
+                    .stream()
+                    .filter(p -> Objects.equals(p.getCode(), product.getCode()))
+                    .count();
             discount += freeProduct.getPrice();
         }
 
@@ -66,6 +70,7 @@ public class Discount {
     }
 
 }
+
 
 
 
