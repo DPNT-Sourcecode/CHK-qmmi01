@@ -1,10 +1,13 @@
 package befaster.solutions.CHK;
 
 import befaster.solutions.CHK.model.products.Product;
+import befaster.solutions.CHK.service.ProductService;
 
 import java.util.LinkedList;
 
 public class CheckoutSolution {
+
+    private ProductService productService = new ProductService();
 
 
     public Integer checkout(String skus) {
@@ -22,35 +25,17 @@ public class CheckoutSolution {
 
         LinkedList<Product> initialBasket = new LinkedList<>();
         for (char c : skus.toCharArray()) {
-            initialBasket.add(new )
+            initialBasket.add(productService.getByCode(c));
         }
 
         int result = 0;
 
-        for (Character c : frequencies.keySet()) {
 
-            Integer productValue = products.get(c);
-            if (productValue == null) {
-                return -1;
-            }
-
-            Integer currentNumberOfProducts = frequencies.get(c);
-            result = result + currentNumberOfProducts * productValue;
-
-            String specialOfferForCurrentProduct = specialOffers.get(c);
-            if (specialOfferForCurrentProduct != null) {
-                String[] split = specialOfferForCurrentProduct.split(",");
-                int specialOfferProductCounter = Integer.parseInt(split[0]);
-                int specialOfferValue = Integer.parseInt(split[1]);
-
-                result = result - (currentNumberOfProducts / specialOfferProductCounter) * specialOfferValue;
-            }
-
-        }
 
         return result;
 
     }
 }
+
 
 
