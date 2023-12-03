@@ -1,6 +1,7 @@
 package befaster.solutions.CHK.service;
 
 import befaster.solutions.CHK.model.products.B;
+import befaster.solutions.CHK.model.products.F;
 import befaster.solutions.CHK.model.products.Product;
 
 import java.util.LinkedList;
@@ -82,4 +83,26 @@ public class DiscountService {
         return discount;
     }
 
+    private int getFDiscount(List<Product> products){
+        // 2F -> 10 = -10
+        long numberOfFs = products
+                .stream()
+                .filter(p -> p.getCode() == 'F')
+                .count();
+
+        if (numberOfFs < 2) {
+            return 0;
+        }
+
+        int discount = 0;
+        while (numberOfFs >= 2 && products.contains(new F())) {
+            products.remove(new F());
+            numberOfFs -= 2;
+            discount += 10;
+        }
+
+        return discount;
+    }
+
 }
+
