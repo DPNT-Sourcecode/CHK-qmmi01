@@ -10,4 +10,3 @@ public class HelloSolution {
         return String.format("Hello, %s!", friendName);
     }
 }
-

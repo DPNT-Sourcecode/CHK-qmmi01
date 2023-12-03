@@ -36,5 +36,3 @@ public class CheckoutSolution {
         skus.split
     }
 }
-
-

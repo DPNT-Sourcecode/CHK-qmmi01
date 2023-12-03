@@ -24,4 +24,3 @@ public class HelloSolutionTest {
         assertEquals("Hello, John!", hlo.hello("John"));
     }
 }
-
