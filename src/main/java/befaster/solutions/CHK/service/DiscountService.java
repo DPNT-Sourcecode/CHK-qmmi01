@@ -42,26 +42,27 @@ public class DiscountService {
     }
 
     public int applyDiscount(List<Product> products) {
-        int discount = 0;
+        int result = 0;
 
-        discount += this.discount.buyAnyOfXForY(bundleProducts, products, 3, 45);
+        result += this.discount.buyAnyOfXForY(bundleProducts, products, 3, 45);
 
-        discount += this.discount.getXAndGetYForFree(new E(), products, 2, new B());
-        discount += this.discount.getXAndGetYForFree(new F(), products, 2, new F());
-        discount += this.discount.getXAndGetYForFree(new N(), products, 3, new M());
-        discount += this.discount.getXAndGetYForFree(new R(), products, 3, new Q());
-        discount += this.discount.getXAndGetYForFree(new U(), products, 3, new U());
+        result += this.discount.getXAndGetYForFree(new E(), products, 2, new B());
+        result += this.discount.getXAndGetYForFree(new F(), products, 2, new F());
+        result += this.discount.getXAndGetYForFree(new N(), products, 3, new M());
+        result += this.discount.getXAndGetYForFree(new R(), products, 3, new Q());
+        result += this.discount.getXAndGetYForFree(new U(), products, 3, new U());
 
-        discount += this.discount.getXPayYDiscount(new A(), products, 5, 50, 3, 20);
-        discount += this.discount.getXPayYDiscount(new V(), products, 3, 20, 2, 10);
-        discount += this.discount.getXPayYDiscount(new H(), products, 10, 20, 5, 5);
+        result += this.discount.getXPayYDiscount(new A(), products, 5, 50, 3, 20);
+        result += this.discount.getXPayYDiscount(new V(), products, 3, 20, 2, 10);
+        result += this.discount.getXPayYDiscount(new H(), products, 10, 20, 5, 5);
 
-        discount += this.discount.getXPayYDiscount(new B(), products, 2, 15);
-        discount += this.discount.getXPayYDiscount(new K(), products, 2, 20);
-        discount += this.discount.getXPayYDiscount(new P(), products, 5, 50);
-        discount += this.discount.getXPayYDiscount(new Q(), products, 3, 10);
+        result += this.discount.getXPayYDiscount(new B(), products, 2, 15);
+        result += this.discount.getXPayYDiscount(new K(), products, 2, 20);
+        result += this.discount.getXPayYDiscount(new P(), products, 5, 50);
+        result += this.discount.getXPayYDiscount(new Q(), products, 3, 10);
 
-        return discount;
+        return result;
     }
 
 }
+
