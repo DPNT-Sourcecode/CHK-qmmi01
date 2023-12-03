@@ -20,7 +20,7 @@ public class Discount {
         return (int) numberOfProducts / numberOfProductsForDiscount * discount;
     }
 
-    public int getXPayYDiscount(Product product, List<Product> productList, int numberOfProductsForHigherDiscount, int higherDiscount, int numberOfProductsLowerDiscount, int lowerDiscount){
+    public int getXPayYDiscount(Product product, List<Product> productList, int numberOfProductsForHigherDiscount, int higherDiscount, int numberOfProductsLowerDiscount, int lowerDiscount) {
         long numberOfProducts = productList
                 .stream()
                 .filter(p -> Objects.equals(p.getCode(), product.getCode()))
@@ -55,7 +55,9 @@ public class Discount {
 
         int discount = 0;
         while (numberOfProducts >= numberOfProductsForDiscount && productList.contains(freeProduct)) {
-            productList.remove(freeProduct);
+            for (int i = 0; i < numberOfProductsForDiscount + 1; i++) {
+                productList.remove(freeProduct);
+            }
             numberOfProducts -= numberOfProductsForDiscount;
             discount += freeProduct.getPrice();
         }
@@ -64,4 +66,5 @@ public class Discount {
     }
 
 }
+
 
