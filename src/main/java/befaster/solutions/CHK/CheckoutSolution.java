@@ -20,7 +20,7 @@ public class CheckoutSolution {
         products.put('C', 20);
         products.put('D', 15);
 
-        specialOffers.put('A', "3,15");
+        specialOffers.put('A', "3,20");
         specialOffers.put('B', "2,15");
     }
 
@@ -66,5 +66,6 @@ public class CheckoutSolution {
 
     }
 }
+
 
 

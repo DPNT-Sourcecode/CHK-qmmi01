@@ -19,6 +19,24 @@ public class CheckoutSolutionTest {
     public void testOk() {
         assertEquals(445, chk.checkout("AAAAAAABBBCCC"));
     }
+
+    @Test
+    public void testIllegalArgument_V1() {
+        assertEquals(-1, chk.checkout(null));
+    }
+
+    @Test
+    public void testIllegalArgument_V2() {
+        assertEquals(-1, chk.checkout(""));
+    }
+
+    @Test
+    public void testIllegalArgument_V3() {
+        assertEquals(-1, chk.checkout("  "));
+    }
+
+
 }
+
 
 
