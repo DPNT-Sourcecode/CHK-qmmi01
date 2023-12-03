@@ -20,8 +20,8 @@ public class CheckoutSolution {
         products.put('C', 20);
         products.put('D', 15);
 
-        specialOffers.put('A', "3,130");
-        specialOffers.put('B', "2,45");
+        specialOffers.put('A', "3,15");
+        specialOffers.put('B', "2,15");
     }
 
     public Integer checkout(String skus) {
@@ -39,21 +39,32 @@ public class CheckoutSolution {
             frequencies.put(c, freq == null ? 1 : freq + 1);
         }
 
+        int result = 0;
+
         for (Character c : frequencies.keySet()) {
+
+            Integer productValue = products.get(c);
+            if (productValue == null) {
+                return -1;
+            }
+
             Integer currentNumberOfProducts = frequencies.get(c);
+            result = result + currentNumberOfProducts * productValue;
+
             String specialOfferForCurrentProduct = specialOffers.get(c);
             if (specialOfferForCurrentProduct != null) {
                 String[] split = specialOfferForCurrentProduct.split(",");
-                Integer specialOfferProductCounter = Integer.parseInt(split[0]);
-                Integer specialOfferValue = Integer.parseInt(split[1]);
+                int specialOfferProductCounter = Integer.parseInt(split[0]);
+                int specialOfferValue = Integer.parseInt(split[1]);
 
-                int aux =  currentNumberOfProducts / specialOfferProductCounter;
+                result = result - (currentNumberOfProducts / specialOfferProductCounter) * specialOfferValue;
             }
 
         }
 
-        return 0;
+        return result;
 
     }
 }
+
 
