@@ -55,7 +55,7 @@ public class Discount {
 
         int discount = 0;
         while (numberOfProducts >= numberOfProductsForDiscount && productList.contains(freeProduct)) {
-            for (int i = 0; i < numberOfProductsForDiscount + 1; i++) {
+            for (int i = 0; i < numberOfProductsForDiscount; i++) {
                 productList.remove(freeProduct);
             }
             numberOfProducts -= numberOfProductsForDiscount;
@@ -66,5 +66,6 @@ public class Discount {
     }
 
 }
+
 
 
