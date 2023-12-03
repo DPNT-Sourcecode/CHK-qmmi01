@@ -29,8 +29,12 @@ public class CheckoutSolution {
         // String is null
         // String is blank or empty
         // String has digits
-        if (skus == null || skus.isBlank() || skus.matches(".*\\d.*")) {
+        if (skus == null || skus.matches(".*\\d.*")) {
             return -1;
+        }
+
+        if (skus.isBlank()) {
+            return 0;
         }
 
         HashMap<Character, Integer> frequencies = new HashMap<>();
@@ -66,6 +70,7 @@ public class CheckoutSolution {
 
     }
 }
+
 
 
 
