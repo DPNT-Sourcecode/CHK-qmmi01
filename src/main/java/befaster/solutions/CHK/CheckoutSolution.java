@@ -10,9 +10,6 @@ public class CheckoutSolution {
 
     private ProductService productService = new ProductService();
 
-    private DiscountService discountService = new DiscountService();
-
-
     public Integer checkout(String skus) {
         // Returns -1 if:
         // String is null
@@ -38,7 +35,10 @@ public class CheckoutSolution {
             result += product.getPrice();
         }
 
-        return result - discountService.applyDiscount(basket);
+        DiscountService discountService = new DiscountService(basket);
+
+        return result - discountService.applyDiscount();
 
     }
 }
+
