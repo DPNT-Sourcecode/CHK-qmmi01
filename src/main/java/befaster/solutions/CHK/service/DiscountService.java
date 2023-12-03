@@ -40,7 +40,7 @@ public class DiscountService {
             return (int) numberOfAs / 5 * 50;
         }
 
-        if (div > 3) {
+        if (div >= 3) {
             return (int) numberOfAs / 5 * 50 + 20;
         }
 
@@ -82,6 +82,7 @@ public class DiscountService {
     }
 
 }
+
 
 
 
