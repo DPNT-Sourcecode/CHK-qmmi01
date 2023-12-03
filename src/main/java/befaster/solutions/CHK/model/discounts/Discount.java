@@ -79,14 +79,12 @@ public class Discount {
     }
 
     public int buyAnyOfXForY(List<Product> acceptedProducts, List<Product> productList, int numberOfProductsForDiscount, int priceToPay) {
-        LinkedList<Product> sorted = new LinkedList<>(productList);
-        sorted.sort(Comparator.comparingInt(Product::getPrice).reversed());
+        productList.sort(Comparator.comparingInt(Product::getPrice).reversed());
 
         LinkedList<Product> matched = new LinkedList<>();
         int result = 0;
-        for (Product product : sorted) {
+        for (Product product : productList) {
             if (matched.size() == numberOfProductsForDiscount) {
-                productList.removeAll(matched);
                 result += matched.stream().mapToInt(Product::getPrice).sum() - priceToPay;
                 matched.clear();
             }
@@ -99,6 +97,7 @@ public class Discount {
     }
 
 }
+
 
 
 
