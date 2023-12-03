@@ -86,7 +86,7 @@ public class Discount {
         int result = 0;
         for (Product product : sorted) {
             if (matched.size() == numberOfProductsForDiscount) {
-                sorted.removeAll(matched);
+                productList.removeAll(matched);
                 result += matched.stream().mapToInt(Product::getPrice).sum() - priceToPay;
                 matched.clear();
             }
@@ -99,6 +99,7 @@ public class Discount {
     }
 
 }
+
 
 
 
