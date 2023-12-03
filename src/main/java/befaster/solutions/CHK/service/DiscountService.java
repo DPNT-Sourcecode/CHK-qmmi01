@@ -43,7 +43,7 @@ public class DiscountService {
             return (int) numberOfAs / 5 * 50 + 20;
         }
 
-        return 0;
+        return (int) numberOfAs / 5 * 50;
     }
 
     private int getBDiscount(List<Product> products) {
@@ -81,4 +81,5 @@ public class DiscountService {
     }
 
 }
+
 
