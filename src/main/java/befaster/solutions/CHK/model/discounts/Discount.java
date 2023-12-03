@@ -2,6 +2,8 @@ package befaster.solutions.CHK.model.discounts;
 
 import befaster.solutions.CHK.model.products.Product;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -74,4 +76,16 @@ public class Discount {
         return discount;
     }
 
+    public int buyAnyOfXForY(List<Product> acceptedProducts, List<Product> productList, int numberOfProductsForDiscount, int discount) {
+        acceptedProducts.sort((Comparator<Product>) (o1, o2) -> {
+            if (o1.getPrice() == o2.getPrice()) {
+                return 0;
+            }
+            if (o1.getPrice() > o2.getPrice()) {
+                return 1;
+            } else return -1;
+        });
+    }
+
 }
+

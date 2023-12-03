@@ -37,7 +37,7 @@ public class DiscountService {
         discount += this.discount.getXPayYDiscount(new H(), products, 10, 20, 5, 5);
 
         discount += this.discount.getXPayYDiscount(new B(), products, 2, 15);
-        discount += this.discount.getXPayYDiscount(new K(), products, 2, 10);
+        discount += this.discount.getXPayYDiscount(new K(), products, 2, 20);
         discount += this.discount.getXPayYDiscount(new P(), products, 5, 50);
         discount += this.discount.getXPayYDiscount(new Q(), products, 3, 10);
 
@@ -45,3 +45,4 @@ public class DiscountService {
     }
 
 }
+
