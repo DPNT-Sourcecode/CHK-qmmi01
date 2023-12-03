@@ -31,6 +31,9 @@ public class CheckoutSolution {
         LinkedList<Product> basket = new LinkedList<>();
         for (char c : skus.toCharArray()) {
             Product product = productService.getByCode(c);
+            if (product == null) {
+                return -1;
+            }
             basket.add(product);
             result += product.getPrice();
         }
@@ -39,4 +42,5 @@ public class CheckoutSolution {
 
     }
 }
+
 
