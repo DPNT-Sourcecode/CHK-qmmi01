@@ -84,10 +84,6 @@ public class Discount {
         LinkedList<Product> matched = new LinkedList<>();
         int discount = 0;
         for (Product product : productList) {
-            if (matched.size() == numberOfProductsForDiscount) {
-                discount += matched.stream().mapToInt(Product::getPrice).sum() - priceToPay;
-                matched.clear();
-            }
             if (acceptedProducts.contains(product)) {
                 matched.add(product);
             }
@@ -97,4 +93,5 @@ public class Discount {
     }
 
 }
+
 
