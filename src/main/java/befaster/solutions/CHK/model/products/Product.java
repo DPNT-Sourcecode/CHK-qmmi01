@@ -11,6 +11,11 @@ public abstract class Product {
         this.code = code;
     }
 
+    public Character getCode() {
+        return code;
+    }
+
 }
+
 
 
