@@ -73,8 +73,9 @@ public class DiscountService {
         }
 
         int discount = 0;
-        while (products.contains(new B())) {
+        while (numberOfEs >= 2 && products.contains(new B())) {
             products.remove(new B());
+            numberOfEs -= 2;
             discount += 30;
         }
 
@@ -82,8 +83,3 @@ public class DiscountService {
     }
 
 }
-
-
-
-
-
