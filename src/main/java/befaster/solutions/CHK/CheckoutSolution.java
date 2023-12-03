@@ -1,6 +1,7 @@
 package befaster.solutions.CHK;
 
 import befaster.solutions.CHK.model.products.Product;
+import befaster.solutions.CHK.service.DiscountService;
 import befaster.solutions.CHK.service.ProductService;
 
 import java.util.LinkedList;
@@ -8,6 +9,8 @@ import java.util.LinkedList;
 public class CheckoutSolution {
 
     private ProductService productService = new ProductService();
+
+    private DiscountService discountService = new DiscountService();
 
 
     public Integer checkout(String skus) {
@@ -23,16 +26,17 @@ public class CheckoutSolution {
             return 0;
         }
 
-        LinkedList<Product> initialBasket = new LinkedList<>();
-        for (char c : skus.toCharArray()) {
-            initialBasket.add(productService.getByCode(c));
-        }
-
         int result = 0;
 
+        LinkedList<Product> basket = new LinkedList<>();
+        for (char c : skus.toCharArray()) {
+            Product product = productService.getByCode(c);
+            basket.add(product);
+            result += product.getPrice();
+        }
 
-
-        return result;
+        return result - discountService.applyDiscount(basket);
 
     }
 }
+

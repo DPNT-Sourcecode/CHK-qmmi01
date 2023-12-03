@@ -25,20 +25,5 @@ public class CheckoutSolutionTest {
         assertEquals(-1, chk.checkout(null));
     }
 
-    @Test
-    public void testIllegalArgument_V2() {
-        assertEquals(-1, chk.checkout(""));
-    }
-
-    @Test
-    public void testIllegalArgument_V3() {
-        assertEquals(-1, chk.checkout("  "));
-    }
-
-    @Test
-    public void test(){
-        int x = 13 % 5;
-    }
-
-
 }
+

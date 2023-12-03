@@ -15,4 +15,17 @@ public abstract class Product {
         return code;
     }
 
+    public int getPrice(){
+        return price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Product aux = (Product) obj;
+        if (aux == null) {
+            return false;
+        }
+        return this.code == aux.getCode();
+    }
 }
+
