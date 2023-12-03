@@ -16,7 +16,19 @@ public class SumSolutionTest {
     }
 
     @Test
-    public void compute_sum() {
-        assertThat(sum.compute(1, 1), equalTo(2));
+    public void compute_sumBothPositive() {
+        assertThat(sum.compute(50, 50), equalTo(100));
     }
+
+    @Test
+    public void compute_sumXEquals0() {
+        assertThat(sum.compute(0, 100), equalTo(100));
+    }
+
+    @Test
+    public void compute_sumYEquals0() {
+        assertThat(sum.compute(100, 0), equalTo(100));
+    }
+
 }
+

@@ -6,7 +6,15 @@ import befaster.runner.SolutionNotImplementedException;
 public class SumSolution {
 
     public int compute(int x, int y) {
-        throw new SolutionNotImplementedException();
+        if (x == 0) {
+            return y;
+        }
+        if (y == 0) {
+            return x;
+        }
+
+        return x + y;
     }
 
 }
+
