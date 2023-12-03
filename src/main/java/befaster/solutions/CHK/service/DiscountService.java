@@ -31,7 +31,7 @@ public class DiscountService {
             return 0;
         }
 
-        if (numberOfAs == 4) {
+        if (numberOfAs < 5) {
             return 20;
         }
 
@@ -82,6 +82,7 @@ public class DiscountService {
     }
 
 }
+
 
 
 
