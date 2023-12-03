@@ -88,12 +88,15 @@ public class Discount {
             }
         }
 
-        productList.removeAll(matched);
+        while (matched.size() % numberOfProductsForDiscount != 0) {
+            matched.removeLast();
+        }
 
         return matched.stream().mapToInt(Product::getPrice).sum() - (priceToPay * (matched.size() / numberOfProductsForDiscount));
     }
 
 }
+
 
 
 
