@@ -77,15 +77,12 @@ public class Discount {
     }
 
     public int buyAnyOfXForY(List<Product> acceptedProducts, List<Product> productList, int numberOfProductsForDiscount, int discount) {
-        acceptedProducts.sort((Comparator<Product>) (o1, o2) -> {
-            if (o1.getPrice() == o2.getPrice()) {
-                return 0;
-            }
-            if (o1.getPrice() > o2.getPrice()) {
-                return 1;
-            } else return -1;
-        });
+        acceptedProducts.sort(Comparator.comparingInt(Product::getPrice));
+        acceptedProducts.sort(Collections.reverseOrder());
+
+        return 0;
     }
 
 }
+
 
