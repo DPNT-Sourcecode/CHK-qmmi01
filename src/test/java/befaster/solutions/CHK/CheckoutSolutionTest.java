@@ -17,7 +17,7 @@ public class CheckoutSolutionTest {
 
     @Test
     public void testOk() {
-        /*
+
         assertEquals(435, chk.checkout("AAAAAAABBBCCC"));
         assertEquals(465, chk.checkout("AAAAAAABBBCCCFFFF"));
         assertEquals(475, chk.checkout("AAAAAAABBBCCCFFFFFF"));
@@ -32,13 +32,14 @@ public class CheckoutSolutionTest {
         assertEquals(280, chk.checkout("ABCDEABCDE"));
         assertEquals(600, chk.checkout("AAAAAAABBBCCCEEEEEE"));
         assertEquals(-1, chk.checkout(null));
-        assertEquals(275, chk.checkout("SSSTTTXXXYYYZZZA"));*/
-        assertEquals(296, chk.checkout("SSSTTTXXXYYYZZZAZ"));
+        assertEquals(275, chk.checkout("SSSTTTXXXYYYZZZA"));
+        assertEquals(292, chk.checkout("SSSTTTXXXYYYZZZAZ"));
 
     }
 
 
 }
+
 
 
 
