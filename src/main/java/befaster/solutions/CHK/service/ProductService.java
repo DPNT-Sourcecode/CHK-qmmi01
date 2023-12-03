@@ -5,6 +5,7 @@ import befaster.solutions.CHK.model.products.B;
 import befaster.solutions.CHK.model.products.C;
 import befaster.solutions.CHK.model.products.D;
 import befaster.solutions.CHK.model.products.E;
+import befaster.solutions.CHK.model.products.F;
 import befaster.solutions.CHK.model.products.Product;
 
 import java.util.HashMap;
@@ -23,9 +24,11 @@ public class ProductService {
         products.put('C', new C());
         products.put('D', new D());
         products.put('E', new E());
+        products.put('F', new F());
     }
 
     public Product getByCode(Character code) {
         return products.get(code);
     }
 }
+

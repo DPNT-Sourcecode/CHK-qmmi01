@@ -15,6 +15,7 @@ public class DiscountService {
         discount += getADiscount(aux);
         discount += getEDiscount(aux);
         discount += getBDiscount(aux);
+        discount += getFDiscount(aux);
         return discount;
     }
 
@@ -90,7 +91,7 @@ public class DiscountService {
                 .filter(p -> p.getCode() == 'F')
                 .count();
 
-        if (numberOfFs < 2) {
+        if (numberOfFs < 3) {
             return 0;
         }
 
@@ -105,4 +106,5 @@ public class DiscountService {
     }
 
 }
+
 
