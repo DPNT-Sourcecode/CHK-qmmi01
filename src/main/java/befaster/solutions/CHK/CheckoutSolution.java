@@ -1,6 +1,11 @@
 package befaster.solutions.CHK;
 
 import befaster.runner.SolutionNotImplementedException;
+import befaster.solutions.CHK.products.A;
+import befaster.solutions.CHK.products.B;
+import befaster.solutions.CHK.products.C;
+import befaster.solutions.CHK.products.D;
+import befaster.solutions.CHK.products.E;
 import befaster.solutions.CHK.products.Product;
 
 import java.util.HashMap;
@@ -8,7 +13,7 @@ import java.util.HashMap;
 public class CheckoutSolution {
 
     // Map of String (SKU) -> Value (Pound)
-    private HashMap<Product, Integer> products = new HashMap<>();
+    private HashMap<Character, Product> products = new HashMap<>();
     private HashMap<Character, String> specialOffers = new HashMap<>();
 
     public CheckoutSolution() {
@@ -16,11 +21,11 @@ public class CheckoutSolution {
     }
 
     private void init() {
-        products.put('A', 50);
-        products.put('B', 30);
-        products.put('C', 20);
-        products.put('D', 15);
-        products.put('E', 40);
+        products.put('A', new A());
+        products.put('B', new B());
+        products.put('C', new C());
+        products.put('D', new D());
+        products.put('E', new E());
 
         specialOffers.put('A', "3,20");
         specialOffers.put('B', "2,15");
@@ -73,3 +78,4 @@ public class CheckoutSolution {
 
     }
 }
+

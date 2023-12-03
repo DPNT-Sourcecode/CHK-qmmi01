@@ -3,6 +3,7 @@ package befaster.solutions.CHK.products;
 public class A extends Product{
 
     public A(){
-        super(50);
+        super('A',50);
     }
 }
+
