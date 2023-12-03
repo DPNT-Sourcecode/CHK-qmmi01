@@ -1,9 +1,11 @@
 package befaster.solutions.CHK.model.discounts;
 
+import befaster.solutions.CHK.model.products.L;
 import befaster.solutions.CHK.model.products.Product;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -77,12 +79,26 @@ public class Discount {
     }
 
     public int buyAnyOfXForY(List<Product> acceptedProducts, List<Product> productList, int numberOfProductsForDiscount, int discount) {
-        acceptedProducts.sort(Comparator.comparingInt(Product::getPrice));
-        acceptedProducts.sort(Collections.reverseOrder());
+        productList.sort(Comparator.comparingInt(Product::getPrice));
+        productList.sort(Collections.reverseOrder());
 
-        return 0;
+        LinkedList<Product> matched = new LinkedList<>();
+        int result = 0;
+        for (Product product : productList) {
+            if (matched.size() == numberOfProductsForDiscount) {
+                productList.removeAll(matched);
+                matched.clear();
+                result += discount;
+            }
+            if (acceptedProducts.contains(product)) {
+                matched.add(product);
+            }
+        }
+
+        return result;
     }
 
 }
+
 
 
