@@ -19,7 +19,7 @@ public class CheckoutSolutionTest {
     public void testOk() {
         assertEquals(435, chk.checkout("AAAAAAABBBCCC"));
         assertEquals(465, chk.checkout("AAAAAAABBBCCCFFFF"));
-        assertEquals(495, chk.checkout("AAAAAAABBBCCCFFFFFF"));
+        assertEquals(475, chk.checkout("AAAAAAABBBCCCFFFFFF"));
         assertEquals(455, chk.checkout("AAAAAAABBBCCCFFF"));
         assertEquals(455, chk.checkout("AAAAAAABBBCCCFF"));
         assertEquals(445, chk.checkout("AAAAAAABBBCCCF"));
@@ -43,6 +43,7 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
 
