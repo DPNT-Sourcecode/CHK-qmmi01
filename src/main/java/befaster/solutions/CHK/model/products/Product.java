@@ -8,4 +8,6 @@ public abstract class Product {
         this.price = price;
         this.code = code;
     }
+
 }
+
