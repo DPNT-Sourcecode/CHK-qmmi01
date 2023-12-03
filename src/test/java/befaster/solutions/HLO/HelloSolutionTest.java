@@ -16,7 +16,6 @@ public class HelloSolutionTest {
 
     @Test
     public void helloWorldNullFriendNameTest(){
-        assertEquals("Hello World!", hlo.hello(null));
+        assertEquals("Hello, World!", hlo.hello(null));
     }
 }
-
