@@ -35,5 +35,11 @@ public class CheckoutSolutionTest {
         assertEquals(-1, chk.checkout("  "));
     }
 
+    @Test
+    public void test(){
+        int x = 13 % 5;
+    }
+
 
 }
+

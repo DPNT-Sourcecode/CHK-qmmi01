@@ -27,15 +27,17 @@ public class Discount {
         if (numberOfAs % 5 == 0) {
             return (int) numberOfAs / 5 * 50;
         }
+        return 0;
     }
 
 
     public int getBDiscount(List<Product> products) {
-
+        return 0;
     }
 
     public int getEDiscount(List<Product> products) {
-
+        return 0;
     }
 }
+
 
