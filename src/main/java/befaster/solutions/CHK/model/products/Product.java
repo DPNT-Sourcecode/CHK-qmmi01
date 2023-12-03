@@ -1,4 +1,4 @@
-package befaster.solutions.CHK.products;
+package befaster.solutions.CHK.model.products;
 
 public abstract class Product {
     protected Integer price;
@@ -9,4 +9,3 @@ public abstract class Product {
         this.code = code;
     }
 }
-

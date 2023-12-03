@@ -1,36 +1,11 @@
 package befaster.solutions.CHK;
 
-import befaster.runner.SolutionNotImplementedException;
-import befaster.solutions.CHK.products.A;
-import befaster.solutions.CHK.products.B;
-import befaster.solutions.CHK.products.C;
-import befaster.solutions.CHK.products.D;
-import befaster.solutions.CHK.products.E;
-import befaster.solutions.CHK.products.Product;
+import befaster.solutions.CHK.model.products.Product;
 
-import java.util.HashMap;
+import java.util.LinkedList;
 
 public class CheckoutSolution {
 
-    // Map of String (SKU) -> Value (Pound)
-    private HashMap<Character, Product> products = new HashMap<>();
-    private HashMap<Character, String> specialOffers = new HashMap<>();
-
-    public CheckoutSolution() {
-        init();
-    }
-
-    private void init() {
-        products.put('A', new A());
-        products.put('B', new B());
-        products.put('C', new C());
-        products.put('D', new D());
-        products.put('E', new E());
-
-        specialOffers.put('A', "3,20");
-        specialOffers.put('B', "2,15");
-        specialOffers.put('E', "2,30");
-    }
 
     public Integer checkout(String skus) {
         // Returns -1 if:
@@ -45,10 +20,9 @@ public class CheckoutSolution {
             return 0;
         }
 
-        HashMap<Character, Integer> frequencies = new HashMap<>();
+        LinkedList<Product> initialBasket = new LinkedList<>();
         for (char c : skus.toCharArray()) {
-            Integer freq = frequencies.get(c);
-            frequencies.put(c, freq == null ? 1 : freq + 1);
+            initialBasket.add(new )
         }
 
         int result = 0;
@@ -78,4 +52,5 @@ public class CheckoutSolution {
 
     }
 }
+
 

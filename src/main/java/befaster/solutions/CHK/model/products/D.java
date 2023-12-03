@@ -1,4 +1,4 @@
-package befaster.solutions.CHK.products;
+package befaster.solutions.CHK.model.products;
 
 public class D extends Product {
 
@@ -6,4 +6,3 @@ public class D extends Product {
         super('D', 15);
     }
 }
-
