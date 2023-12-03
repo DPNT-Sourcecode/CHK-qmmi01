@@ -19,10 +19,11 @@ public class CheckoutSolution {
         products.put('B', 30);
         products.put('C', 20);
         products.put('D', 15);
+        products.put('E', 40);
 
         specialOffers.put('A', "3,20");
         specialOffers.put('B', "2,15");
-        specialOffers.put('A', "5,15");
+        specialOffers.put('E', "2,30");
     }
 
     public Integer checkout(String skus) {
@@ -71,6 +72,7 @@ public class CheckoutSolution {
 
     }
 }
+
 
 
 
