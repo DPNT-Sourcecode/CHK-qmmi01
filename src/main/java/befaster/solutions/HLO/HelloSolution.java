@@ -4,6 +4,10 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class HelloSolution {
     public String hello(String friendName) {
-        return "Hello, World!";
+        if (friendName == null || friendName.isEmpty()) {
+            return "Hello, World!";
+        }
+        return String.format("Hello, %s!", friendName);
     }
 }
+
