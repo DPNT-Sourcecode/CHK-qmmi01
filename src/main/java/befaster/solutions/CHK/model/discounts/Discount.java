@@ -82,10 +82,10 @@ public class Discount {
         productList.sort(Comparator.comparingInt(Product::getPrice).reversed());
 
         LinkedList<Product> matched = new LinkedList<>();
-        int result = 0;
+        int discount = 0;
         for (Product product : productList) {
             if (matched.size() == numberOfProductsForDiscount) {
-                result += matched.stream().mapToInt(Product::getPrice).sum() - priceToPay;
+                discount += matched.stream().mapToInt(Product::getPrice).sum() - priceToPay;
                 matched.clear();
             }
             if (acceptedProducts.contains(product)) {
@@ -93,7 +93,8 @@ public class Discount {
             }
         }
 
-        return result;
+        return discount;
     }
 
 }
+
