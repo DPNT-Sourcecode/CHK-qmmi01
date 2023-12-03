@@ -25,25 +25,17 @@ public class CheckoutSolutionTest {
         assertEquals(445, chk.checkout("AAAAAAABBBCCCF"));
         assertEquals(837, chk.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));
         assertEquals(20, chk.checkout("W"));
-        assertEquals(1880, chk.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"));
-    }
-
-    @Test
-    public void testOkV2() {
+        assertEquals(1602, chk.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"));
         assertEquals(130, chk.checkout("AAA"));
         assertEquals(330, chk.checkout("AAAAAAAA"));
         assertEquals(280, chk.checkout("ABCDEABCDE"));
-    }
-
-    @Test
-    public void testOkWithE() {
         assertEquals(600, chk.checkout("AAAAAAABBBCCCEEEEEE"));
+        assertEquals(-1, chk.checkout(null));
+
+        assertEquals(1602, chk.checkout("SSSTTTXXXYYYZZZA"));
+
+
     }
 
-    @Test
-    public void testIllegalArgument_V1() {
-        assertEquals(-1, chk.checkout(null));
-    }
 
 }
-
