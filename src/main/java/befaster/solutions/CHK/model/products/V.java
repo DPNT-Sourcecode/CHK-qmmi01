@@ -5,4 +5,3 @@ public class V extends Product{
         super('V', 50);
     }
 }
-
