@@ -1,10 +1,12 @@
 package befaster.solutions.CHK.model.products;
 
-public class A extends Product{
+import java.util.List;
 
-    public A(){
-        super('A',50);
+public class A extends Product {
+
+    public A() {
+        super('A', 50);
     }
-
 }
+
 
